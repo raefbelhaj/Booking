@@ -1,0 +1,39 @@
+// Main header styles
+.main-header {
+    background-color: crimson;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    h2 {
+      color: white;
+      margin: 0;
+      font-size: 24px;
+    }
+  
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+  
+      a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+  
+        &.active {
+          background-color: rgba(255, 255, 255, 0.3);
+          color: #333;
+        }
+      }
+    }
+  }
+  

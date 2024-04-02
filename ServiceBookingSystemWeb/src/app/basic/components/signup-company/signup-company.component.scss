@@ -1,0 +1,59 @@
+/* Styles for the form */
+.bg {
+    background-color: #f0f2f5;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .parent {
+      width: 400px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+      .child {
+        display: flex;
+        flex-direction: column;
+  
+        h1 {
+          text-align: center;
+          margin-bottom: 20px;
+          color: #1890ff;
+        }
+  
+        form {
+          display: flex;
+          flex-direction: column;
+  
+          .nz-form-item {
+            margin-bottom: 16px;
+  
+            .nz-form-control {
+              width: 100%;
+  
+              input {
+                width: 100%;
+              }
+            }
+          }
+  
+          .login-form-button {
+            width: 100%;
+          }
+  
+          .login-form-margin {
+            margin-top: 10px;
+          }
+  
+          a {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+  

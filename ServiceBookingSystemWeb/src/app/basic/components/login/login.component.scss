@@ -1,0 +1,92 @@
+// Variables
+$primary-color: #1890ff;
+$font-color: #333;
+
+// Styles
+.bg {
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .parent {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+
+    .child {
+      width: 400px;
+
+      .imgDiv {
+        text-align: center;
+        margin-bottom: 24px;
+
+        h1 {
+          margin-left: 100px;
+          color: $primary-color;
+        }
+      }
+
+      .login-form {
+        .login-form-button {
+          width: 100%;
+        }
+
+        .login-form-margin {
+          margin-top: 10px;
+        }
+
+        .ant-btn-primary {
+          background-color: $primary-color;
+          border-color: $primary-color;
+
+          &:hover,
+          &:focus {
+            background-color: darken($primary-color, 10%);
+            border-color: darken($primary-color, 10%);
+          }
+        }
+
+        .ant-input {
+          &:focus {
+            border-color: $primary-color;
+            box-shadow: 0 0 0 2px lighten($primary-color, 40%);
+          }
+        }
+
+        .ant-input-group-addon {
+          background-color: #fafafa;
+          border-color: #d9d9d9;
+        }
+
+        .ant-input-group-wrapper {
+          .ant-input-group {
+            .ant-input {
+              padding-left: 30px;
+            }
+          }
+        }
+
+        .ant-form-item-explain {
+          color: #ff4d4f;
+        }
+
+        .ant-form-explain {
+          margin-top: 5px;
+        }
+
+        .ant-form-item-label {
+          label {
+            color: $font-color;
+          }
+        }
+
+        .ant-form-item {
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}
