@@ -1,6 +1,6 @@
 // Variables
-$primary-color: #1890ff;
-$font-color: #333;
+$primary-color: black;
+$font-color: black;
 
 // Styles
 .bg {
@@ -20,7 +20,7 @@ $font-color: #333;
       width: 400px;
 
       .imgDiv {
-        text-align: center;
+        text-align: center; // Centrer le contenu
         margin-bottom: 24px;
 
         h1 {
@@ -32,6 +32,7 @@ $font-color: #333;
       .login-form {
         .login-form-button {
           width: 100%;
+          
         }
 
         .login-form-margin {

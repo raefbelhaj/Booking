@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth/auth.service';
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { Router } from '@angular/router';
+import { UserStorageService } from '../../services/storage/user-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -27,27 +28,27 @@ export class LoginComponent {
   }
 
   submitForm() {
-    if (this.validateForm.valid) {
-      const username = this.validateForm.get('userName')!.value;
-      const password = this.validateForm.get('password')!.value;
-
-      this.authService.login(username, password)
-        .subscribe(
-          res => {
-            console.log(res);
-            // Rediriger vers une autre page après la connexion réussie
-            this.router.navigate(['/dashboard']);
-          },
-          error => {
-            this.notification.error(
-              'ERROR',
-              'Bad credentials',
-              { nzDuration: 5000 }
-            );
+    this.authService.login(this.validateForm.get('userName')!.value, this.validateForm.get('password')!.value)
+      .subscribe(
+        res => {
+          console.log(res);
+          // Assuming the authService sets the appropriate flag in UserStorageService
+          if (UserStorageService.isCLientLoggedIn()) {
+            this.router.navigateByUrl('client/dashboard');
+          } else if (UserStorageService.isCompanyLoggedIn()) {
+            this.router.navigateByUrl('company/dashboard');
+          } else {
+            // Redirect to a default page if neither client nor company logged in
+            this.router.navigateByUrl('/home');
           }
-        );
-    } else {
-      console.error('Form is invalid');
-    }
+        },
+        error => {
+          this.notification.error(
+            'ERROR',
+            'Bad credentials',
+            { nzDuration: 5000 }
+          );
+      } 
+      );
   }
 }
